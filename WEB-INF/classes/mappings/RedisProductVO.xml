@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- 
+
+resultType 는 반드시 정확하게 입력해야함 클래스급으로 오류남
+ -->
+<mapper namespace="redisProductVO">
+
+
+<select id="getTheRedisProductQuantity" parameterType="RedisProductVO" resultType="RedisProductVO">
+
+select product_order_quantity from redis_product where product_cod=#{product_cod}
+
+</select>
+
+<update id="redisMinusQuantity" parameterType="RedisProductVO" >
+
+update redis_product set product_order_quantity=#{product_order_quantity} where product_cod=#{product_cod} 
+
+</update>
+
+
+
+
+
+
+
+
+</mapper>
